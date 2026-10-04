@@ -1,0 +1,94 @@
+{
+  "_comment": "Complete con datos reales del portal DIAN (habilitación). No commitear secretos. TestID = ID del set en catalogo-vpfe-hab.dian.gov.co",
+  "Control": {
+    "StartDate": "REEMPLAZAR_FECHA_INICIO_RESOLUCION",
+    "EndDate": "REEMPLAZAR_FECHA_FIN_RESOLUCION",
+    "InvoiceAuthorization": "REEMPLAZAR_NUMERO_RESOLUCION",
+    "Pin": "REEMPLAZAR_PIN_SOFTWARE_DIAN",
+    "Prefix": "REEMPLAZAR_PREFIJO",
+    "From": "1",
+    "To": "5000",
+    "TestID": "REEMPLAZAR_TEST_ID_CAJA_HERRAMIENTAS",
+    "ProviderID": "REEMPLAZAR_NIT_EMISOR",
+    "SoftwareID": "REEMPLAZAR_SOFTWARE_ID_DIAN",
+    "ProfileExecutionID": "2",
+    "TechnicalKey": "REEMPLAZAR_CLAVE_TECNICA_RESOLUCION"
+  },
+  "ID": "REEMPLAZAR_PREFIJO990000001",
+  "IssueDate": "2026-05-21",
+  "IssueTime": "10:00:00-05:00",
+  "Payment": {
+    "PaymentID": "1",
+    "PaymentCode": "10"
+  },
+  "Amounts": {
+    "LineExtensionAmount": "100000.00",
+    "TaxExclusiveAmount": "100000.00",
+    "TaxInclusiveAmount": "119000.00",
+    "PrepaidAmount": "0.00",
+    "PayableAmount": "119000.00",
+    "TaxTotals": [
+      {
+        "TaxAmount": "19000.00",
+        "TaxSubtotal": [
+          {
+            "TaxAmount": "19000.00",
+            "TaxableAmount": "100000.00",
+            "TaxPercent": "19.00",
+            "TaxSchemeID": "01",
+            "TaxSchemeName": "IVA"
+          }
+        ]
+      }
+    ]
+  },
+  "Lines": [
+    {
+      "ID": "1",
+      "Quantity": "1.00",
+      "LineExtensionAmount": "100000.00",
+      "TaxAmount": "19000.00",
+      "TaxableAmount": "100000.00",
+      "TaxSubtotalAmount": "19000.00",
+      "TaxPercent": "19.00",
+      "TaxSchemeID": "01",
+      "TaxSchemeName": "IVA",
+      "Description": "Servicio de prueba habilitacion DIAN",
+      "SellersItemID": "001",
+      "AdditionalItemID": "001",
+      "PriceAmount": "100000.00",
+      "BaseQuantity": "1.00"
+    }
+  ],
+  "Company": {
+    "AdditionalAccountID": "1",
+    "PartyName": "REEMPLAZAR_RAZON_SOCIAL_EMISOR",
+    "CompanyID": "REEMPLAZAR_NIT_EMISOR",
+    "DocumentType": "31",
+    "VerificationDigit": "REEMPLAZAR_DV",
+    "TaxLevelCode": "R-99-PN",
+    "Address": {
+      "AddressID": "11001",
+      "CountrySubentityCode": "11",
+      "CityName": "Bogotá",
+      "CountrySubentity": "Bogotá D.C.",
+      "AddressLine": "REEMPLAZAR_DIRECCION_EMISOR"
+    }
+  },
+  "Customer": {
+    "ID": "900123456",
+    "DocumentType": "31",
+    "AdditionalAccountID": "1",
+    "PartyName": "CLIENTE PRUEBA SAS",
+    "Telephone": "3000000000",
+    "Email": "cliente@ejemplo.com",
+    "TaxLevelCode": "R-99-PN",
+    "Address": {
+      "AddressID": "11001",
+      "CountrySubentityCode": "11",
+      "CityName": "Bogotá",
+      "CountrySubentity": "Bogotá D.C.",
+      "AddressLine": "Carrera 10 # 20-30"
+    }
+  }
+}

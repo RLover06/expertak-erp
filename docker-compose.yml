@@ -1,0 +1,54 @@
+version: '3.8'
+
+# Base de datos: Supabase (recomendado). Configura DATABASE_URL en backend/.env
+# Para MariaDB local opcional: docker compose --profile mariadb up -d
+
+services:
+  db:
+    profiles: ["mariadb"]
+    image: mariadb:10.11
+    container_name: expertak_db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: expertak
+      MYSQL_USER: expertak_user
+      MYSQL_PASSWORD: expertak_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./backend/sql/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: expertak_backend
+    env_file:
+      - ./backend/.env
+    environment:
+      CORS_ORIGINS: '["http://localhost:5173","http://localhost:3000","http://localhost"]'
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/uploads:/app/uploads
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: expertak_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  db_data:

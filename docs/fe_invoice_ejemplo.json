@@ -1,0 +1,94 @@
+{
+  "_comment": "Ejemplo estructura InvoiceDto — reemplace con datos reales de resolución, certificado y empresa. Control.TestID solo en habilitación.",
+  "Control": {
+    "StartDate": "2025-01-01",
+    "EndDate": "2026-12-31",
+    "InvoiceAuthorization": "NUMERO_RESOLUCION",
+    "Pin": "PIN_SOFTWARE_DIAN",
+    "Prefix": "SETT",
+    "From": "1",
+    "To": "5000",
+    "TestID": "ID_SET_PRUEBA_CAJA_HERRAMIENTAS",
+    "ProviderID": "NIT_PROVEEDOR_SOFTWARE",
+    "SoftwareID": "ID_SOFTWARE_DIAN",
+    "ProfileExecutionID": "2",
+    "TechnicalKey": "CLAVE_TECNICA_RESOLUCION"
+  },
+  "ID": "SETT990000027",
+  "IssueDate": "2025-05-18",
+  "IssueTime": "10:30:00-05:00",
+  "Payment": {
+    "PaymentID": "1",
+    "PaymentCode": "10"
+  },
+  "Amounts": {
+    "LineExtensionAmount": "100000.00",
+    "TaxExclusiveAmount": "100000.00",
+    "TaxInclusiveAmount": "119000.00",
+    "PrepaidAmount": "0.00",
+    "PayableAmount": "119000.00",
+    "TaxTotals": [
+      {
+        "TaxAmount": "19000.00",
+        "TaxSubtotal": [
+          {
+            "TaxAmount": "19000.00",
+            "TaxableAmount": "100000.00",
+            "TaxPercent": "19.00",
+            "TaxSchemeID": "01",
+            "TaxSchemeName": "IVA"
+          }
+        ]
+      }
+    ]
+  },
+  "Lines": [
+    {
+      "ID": "1",
+      "Quantity": "1.00",
+      "LineExtensionAmount": "100000.00",
+      "TaxAmount": "19000.00",
+      "TaxableAmount": "100000.00",
+      "TaxSubtotalAmount": "19000.00",
+      "TaxPercent": "19.00",
+      "TaxSchemeID": "01",
+      "TaxSchemeName": "IVA",
+      "Description": "Producto o servicio de prueba",
+      "SellersItemID": "001",
+      "AdditionalItemID": "001",
+      "PriceAmount": "100000.00",
+      "BaseQuantity": "1.00"
+    }
+  ],
+  "Company": {
+    "AdditionalAccountID": "1",
+    "PartyName": "RAZON SOCIAL EMISOR",
+    "CompanyID": "900000000",
+    "DocumentType": "31",
+    "VerificationDigit": "1",
+    "TaxLevelCode": "R-99-PN",
+    "Address": {
+      "AddressID": "11001",
+      "CountrySubentityCode": "11",
+      "CityName": "Bogotá",
+      "CountrySubentity": "Bogotá D.C.",
+      "AddressLine": "Calle 1 # 2-3"
+    }
+  },
+  "Customer": {
+    "ID": "900123456",
+    "DocumentType": "31",
+    "AdditionalAccountID": "1",
+    "PartyName": "CLIENTE PRUEBA SAS",
+    "Telephone": "3000000000",
+    "Email": "cliente@ejemplo.com",
+    "TaxLevelCode": "R-99-PN",
+    "Address": {
+      "AddressID": "11001",
+      "CountrySubentityCode": "11",
+      "CityName": "Bogotá",
+      "CountrySubentity": "Bogotá D.C.",
+      "AddressLine": "Carrera 10 # 20-30"
+    }
+  }
+}

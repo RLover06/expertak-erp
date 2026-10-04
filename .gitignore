@@ -1,0 +1,49 @@
+# Dependencies
+/vendor/
+composer.lock
+
+# Uploaded files
+/uploads/*
+!/uploads/.gitkeep
+
+# Configuration files (may contain sensitive data)
+/config/database.local.php
+.env
+*.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# PHP specific
+*.cache
+
+# Never commit client data, dumps or binaries
+node_modules/
+/*.sql
+*.dll
+~$*
+*.xlsx
+.env.facturacion
