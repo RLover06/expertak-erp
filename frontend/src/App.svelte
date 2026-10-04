@@ -5,11 +5,20 @@
   // import PivotTable from './components/PivotTable.svelte'; // oculto de momento
   import PanelCompras from './components/panel-compras/PanelCompras.svelte';
   import FacturaForm from './components/FacturaForm.svelte';
+  import { DEMO } from './services/api';
+  const base = import.meta.env.BASE_URL;
 
   let currentView = 'panel';
 </script>
 
 <main>
+  {#if DEMO}
+    <div class="demo-banner">
+      <strong>Demo</strong> con datos ficticios: todo se procesa en tu navegador y nada se envía a la DIAN.
+      Prueba la carga con el <a href="{base}ejemplo-documentos-dian.xlsx" download>Excel de ejemplo</a>
+      · <a href="https://github.com/RLover06/expertak-erp" target="_blank" rel="noopener">Código en GitHub</a>
+    </div>
+  {/if}
   <div class="tabs-bar">
     <button
       type="button"
@@ -71,6 +80,15 @@
 </main>
 
 <style>
+  .demo-banner {
+    background: #fff7e6;
+    border-bottom: 1px solid #f3d19c;
+    color: #5c3d00;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    text-align: center;
+  }
+  .demo-banner a { color: #7a4b00; font-weight: 600; }
   :global(body) {
     margin: 0;
     padding: 0;

@@ -47,3 +47,4 @@ node_modules/
 ~$*
 *.xlsx
 .env.facturacion
+!frontend/public/ejemplo-documentos-dian.xlsx

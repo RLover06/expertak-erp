@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { demoAdapter } from './demo.js';
 
 // FastAPI backend only: http://localhost:8000/api/v1
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1';
@@ -6,6 +7,10 @@ const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/
 const api = axios.create({
   baseURL: API_BASE_URL,
 });
+
+// Demo pública (GitHub Pages): sin backend, responde con datos ficticios en el navegador.
+export const DEMO = import.meta.env.VITE_DEMO === 'true';
+if (DEMO) api.defaults.adapter = demoAdapter;
 
 export async function validateFile(file) {
   const formData = new FormData();

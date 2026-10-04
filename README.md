@@ -2,7 +2,7 @@
 
 Web platform for Colombian accounting firms that manage many client companies at once. It turns the DIAN's massive Excel exports (tens of thousands of documents across dozens of companies) into consolidated reports, a purchases panel and per-company analysis, and it is adding **DIAN electronic invoicing** (Annex v1.9) so invoices can be issued from the same place.
 
-Production site: [expertak.kaizenerp.com.co](https://expertak.kaizenerp.com.co/menu/)
+**[▶ Try the live demo](https://rlover06.github.io/expertak-erp/)** — runs entirely in the browser with fictional data (no backend, nothing is sent to the DIAN). Upload the sample Excel from the banner, filter the report and issue a test invoice.
 
 ## Features
 
@@ -38,6 +38,10 @@ frontend/src/components/       Upload, reports, purchases panel, invoice form
 sql/                           Supabase schemas and migrations (fictional pilot seed data)
 docs/                          Architecture, DIAN invoicing notes and roadmap
 ```
+
+## Demo mode
+
+`npm run build:demo` (or `npm run dev:demo`) in `frontend/` builds the app with `VITE_DEMO=true`: an axios adapter (`src/services/demo.js`) answers the API calls in the browser with fictional companies and documents, parses uploaded Excel files with SheetJS and simulates invoice emission (including the CUFE hash). GitHub Actions publishes it to GitHub Pages on every push.
 
 ## Getting started
 
